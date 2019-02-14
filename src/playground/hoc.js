@@ -42,5 +42,5 @@ const requireAuthentication = (WrappedComponent) => {
 
 const AuthInfo = requireAuthentication(Info)
 
-ReactDOM.render(<AdminInfo isAdmin={true} info="Info here" />, document.getElementById('app'))
+//ReactDOM.render(<AdminInfo isAdmin={true} info="Info here" />, document.getElementById('app'))
 ReactDOM.render(<AuthInfo isAuthenticated={"false"} info="Info here" />, document.getElementById('app'))
