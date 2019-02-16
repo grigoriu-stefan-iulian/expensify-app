@@ -18,3 +18,21 @@ button:disabled {
 .is-active {
     color: red;
 }
+
+
+.class {
+background: #d7d7d7;
+/* Old browsers */
+
+background: -moz-linear-gradient(top, #d7d7d7 0%, #909090 100%);
+/* FF3.6-15 */
+
+background: -webkit-linear-gradient(top, #d7d7d7 0%, #909090 100%);
+/* Chrome10-25,Safari5.1-6 */
+
+background: linear-gradient(to bottom, #d7d7d7 0%, #909090 100%);
+/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d7d7d7', endColorstr='#909090', GradientType=0);
+/* IE6-9 */
+} 
