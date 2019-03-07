@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ExpenseListItem from './ExpenseListItem'
-import selectedExpenses from '../selectors/expenses'
+import selectExpenses from '../selectors/expenses'
+
 const ExpenseList = (props) => (
     <div>
         <h2>ExpenseList</h2>
@@ -26,7 +27,7 @@ export default ConnectedExpenseList
 // 2 Take the function inside connect() and put it into a separate function
 
 const mapStateToProps = (state) => ({
-    expenses: selectedExpenses(state.expenses, state.filters)                //state.expenses, -> this will render all the expenses, not the filtered ones because
+    expenses: selectExpenses(state.expenses, state.filters)                //state.expenses, -> this will render all the expenses, not the filtered ones because
     //it has access to the full expenses list not the filtered ones so we change it with selectedExpenses from our ./selectors
     //filters: state.filters // we dont need this
 })
