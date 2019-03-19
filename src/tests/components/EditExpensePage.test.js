@@ -3,14 +3,14 @@ import { shallow } from 'enzyme'
 import expenses from '../fixtures/expenses'
 import { EditExpensePage } from '../../components/EditExpensePage'
 
-let editExpenseSpy, startRemoveExpenseSpy, historySpy, wrapper
+let startEditExpenseSpy, startRemoveExpenseSpy, historySpy, wrapper
 // lifecycle methods: creates fresh copies of these before each test
 beforeEach(() => {
-    editExpenseSpy = jest.fn()
+    startEditExpenseSpy = jest.fn()
     startRemoveExpenseSpy = jest.fn()
     historySpy = { push: jest.fn() }
     wrapper = shallow(<EditExpensePage 
-        editExpense={editExpenseSpy} 
+        startEditExpense={startEditExpenseSpy} 
         startRemoveExpense={startRemoveExpenseSpy} 
         history={historySpy} 
         expense={expenses[1]}
@@ -24,7 +24,7 @@ test('should render EditExpense page', () => {
 test('should handle EditExpense', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[1])
     expect(historySpy.push).toHaveBeenLastCalledWith('/')
-    expect(editExpenseSpy).toHaveBeenLastCalledWith(expenses[1].id, expenses[1])})
+    expect(startEditExpenseSpy).toHaveBeenLastCalledWith(expenses[1].id, expenses[1])})
 
 test('should handle startRemoveExpenseSpy', () => {
     wrapper.find('button').simulate('click')
