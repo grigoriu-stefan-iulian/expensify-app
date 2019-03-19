@@ -1,0 +1,1 @@
+S15, 152 - redux-thunk

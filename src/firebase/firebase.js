@@ -14,45 +14,48 @@ firebase.initializeApp(config);
 
 const database = firebase.database()
 
-//child_removed event 
-database.ref('expenses')
-    .on(
-        'child_removed',
-        (snapshot) => {
-            console.log(snapshot.key, snapshot.val(), 'was removed')
-        }
-    )
 
-//child_changed
-database.ref('expenses')
-    .on(
-        'child_changed',
-        (snapshot) => {
-            console.log(snapshot.val(), 'in', snapshot.key, 'was changed')
-        }
-    )
+export { firebase, database as default }
+// //child_removed event 
+// database.ref('expenses')
+//     .on(
+//         'child_removed',
+//         (snapshot) => {
+//             console.log(snapshot.key, snapshot.val(), 'was removed')
+//         }
+//     )
 
-// child_added
-database.ref('expenses')
-    .on(
-        'child_added',
-        (snapshot) => {
-            console.log(snapshot.val(), snapshot.key)
-        }
-    )
+// //child_changed
+// database.ref('expenses')
+//     .on(
+//         'child_changed',
+//         (snapshot) => {
+//             console.log(snapshot.val(), 'in', snapshot.key, 'was changed')
+//         }
+//     )
 
-database.ref('expenses')
-    .on(
-        'value',
-        (snapshot) => {
-            const expenses = []
-            snapshot.forEach((childSnapshot) => {
-                expenses.push({
-                    idFB: childSnapshot.key,
-                    ...childSnapshot.val()
-                })
-            })
-            console.log(expenses)
-        },
-        (e) => console.log('Error fetching', e)
-    )
+// // child_added
+// database.ref('expenses')
+//     .on(
+//         'child_added',
+//         (snapshot) => {
+//             console.log(snapshot.val(), snapshot.key)
+//         }
+//     )
+
+// database.ref('expenses')
+//     .on(
+//         'value',
+//         (snapshot) => {
+//             const expenses = []
+//             snapshot.forEach((childSnapshot) => {
+//                 expenses.push({
+//                     idFB: childSnapshot.key,
+//                     ...childSnapshot.val()
+//                 })
+//             })
+//             console.log(expenses)
+//         },
+//         (e) => console.log('Error fetching', e)
+//     )
+
