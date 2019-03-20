@@ -9,25 +9,9 @@ import getVisibleExpenses from './selectors/expenses'
 import 'normalize.css/normalize.css';
 import './styles/styles.scss'
 import 'react-dates/lib/css/_datepicker.css'
-import './firebase/firebase'
+import { firebase } from './firebase/firebase'
 
 const store = configureStore()
-// store.subscribe(() => {
-//     const state = store.getState()
-//     console.log(getVisibleExpenses(state.expenses, state.filters))
-// })
-
-// store.dispatch(addExpense({ description: 'Gas bill', amount: 333 }))
-// store.dispatch(addExpense({ description: 'rent bill', amount: 111000 }))
-// store.dispatch(addExpense({ description: 'water bill', amount: 1500, createdAt: 1000 }))
-
-//store.dispatch(setTextFilter('gas'))
-
-// Change text filter to 'water' after 3 seconds
-// setTimeout(() => {
-//     store.dispatch(setTextFilter('water'))
-// }, 3000)
-
 
 const jsx = (
     <Provider store={store}>
@@ -41,3 +25,11 @@ store.dispatch(startSetExpenses()).then(() => {
     ReactDOM.render(jsx, document.getElementById('app'))
 })
 
+// on app load check auth status and do something if logged in or logged out
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log('logged in')
+    } else {
+        console.log('logged out')
+    }
+})
