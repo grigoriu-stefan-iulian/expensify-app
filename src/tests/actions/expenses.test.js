@@ -23,7 +23,6 @@ beforeEach((done) => {
         expensesData[id] = { description, note, amount, createdAt }
     })
     database.ref('expenses').set(expensesData).then(() => done())
-    
 })
 
 test('should setup remove expense action object', () => {
