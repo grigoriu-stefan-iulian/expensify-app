@@ -1,0 +1,15 @@
+.button {
+    color: white;
+    border: none;
+    font-size: $l-font;
+    font-weight: 300;
+    padding: $s-size;
+}
+
+.button__login-google {
+    background: $red;
+}
+
+.button__add-expense {
+    background: $blue;
+}

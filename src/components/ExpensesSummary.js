@@ -5,10 +5,20 @@ import selectExpenses from '../selectors/expenses'
 import selectExpensesTotal from '../selectors/expenses-total'
 
 export const ExpensesSummary = ({ expensesCount = [], expensesTotal }) => (
-    <div>
-        <h1>
-            Viewing {expensesCount} expense{expensesCount === 1 ?  '' : 's'} totalling {numeral(expensesTotal / 100).format('$0,0.00')}.
+    <div className="page-header">
+    <div className="content-container">
+        <button
+            className="button button__add-expense"
+            to="/create"
+        >
+        Add Expense
+       </button>
+
+        <h1 className="page-header__title">
+            Viewing <span>{expensesCount}</span> expense{expensesCount === 1 ?  '' : 's'} totalling <span>{numeral(expensesTotal / 100).format('$0,0.00')}</span>.
         </h1>
+    </div>
+       
     </div>
 )
 
