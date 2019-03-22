@@ -8,9 +8,9 @@ const config = {
     projectId: "grigoriu-stefan-expensify-app",
     storageBucket: "grigoriu-stefan-expensify-app.appspot.com",
     messagingSenderId: "160068128771"
-};
+}
 
-firebase.initializeApp(config);
+firebase.initializeApp(config)
 
 const database = firebase.database()
 

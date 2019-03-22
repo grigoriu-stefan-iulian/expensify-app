@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { startLogin } from '../actions/auth'
 import { connect } from 'react-redux'
 
