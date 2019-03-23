@@ -1,0 +1,55 @@
+.expenses-list {
+    background: $light-grey;
+    border: 1px solid darken($light-grey, 10%);
+    color: $grey;
+    display: flex;
+    padding: $m-size;
+    justify-content: space-between;
+}
+
+.expenses-list__amount {
+    margin: $s-size 0 0 0;
+    @media (min-width: $desktop-breakpoint) {
+        margin: 0 0 0 $m-size;
+    }
+}
+
+.expenses-list__content {
+    margin-bottom: $m-size;
+    @media (min-width: $desktop-breakpoint) {
+        margin-bottom: $l-size;
+    }
+}
+
+.expenses-list__item {
+    @extend .expenses-list;
+    border-top: none;
+    color: $off-black;
+    flex-direction: column;
+    padding: $s-size;
+    text-decoration: none;
+    transition: background .2s ease;
+    @media (min-width: $desktop-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+    }
+}
+
+.expenses-list__item:hover {
+    background: darken($light-grey, 15%)
+}
+
+.expenses-list--no-expenses {
+@extend .expenses-list;
+}
+
+.expenses-list__sub-title {
+    color: $grey;
+    font-size: $s-font;
+}
+
+.expenses-list__title {
+    margin: 0;
+    word-break: break-all;
+}
+

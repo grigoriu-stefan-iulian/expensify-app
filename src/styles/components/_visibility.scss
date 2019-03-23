@@ -1,0 +1,11 @@
+.display-on-mobile {
+    @media (min-width: $desktop-breakpoint) {
+        display: none;
+    }
+}
+
+.display-on-desktop {
+    @media (max-width: $desktop-breakpoint - .01rem) { //to make sure they don't take effect at the same time
+        display: none;
+    }
+}
