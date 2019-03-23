@@ -1,8 +1,11 @@
 .page-header {
     background: #f7f7f7;
-    margin: $m-size;
+    margin-bottom: $m-size;
     padding: $m-size 0;
+}
 
+.page-header__actions {
+    margin-top: $s-size;
 }
 
 .page-header__title {

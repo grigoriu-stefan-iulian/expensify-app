@@ -1,15 +1,26 @@
 .button {
     color: white;
     border: none;
+    display: inline-block;
     font-size: $l-font;
     font-weight: 300;
+    line-height: 1;
     padding: $s-size;
+    text-decoration: none;
 }
 
-.button__login-google {
+.button--login-google {
     background: $red;
 }
 
-.button__add-expense {
+.button--add-expense {
     background: $blue;
+}
+
+.button--link {
+    background: none;
+}
+
+.button--remove {
+    background: #7a7a7a;
 }

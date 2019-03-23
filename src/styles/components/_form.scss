@@ -1,0 +1,15 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $s-size;
+    > * {  //select all direct descentands
+margin-bottom: $s-size;
+    }
+}
+
+.form__error {   
+    color: #ff5100;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 0 $s-size 0;
+}
