@@ -1,4 +1,7 @@
-# Run the Expensify app with the following commands
+# Run the Expensify app with the following commands:
 
-### npm install
-### npm run dev-server
+### yarn install
+### yarn run dev-server
+
+#### To install yarn:
+#### npm install --global yarn
