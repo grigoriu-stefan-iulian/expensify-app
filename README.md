@@ -1,7 +1,4 @@
-# expensify-app
+# Run the Expensify app with the following commands
 
-###git init
-###git status
-###git add
-###git commit -m "commit"
-###git log
+### npm install
+### npm run dev-server
